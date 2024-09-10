@@ -1,4 +1,4 @@
-[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=armandogarcia17/HackRice14_MATLAB)
+[[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=armandogarcia17/HackRice14_MATLAB)](https://github.com/armandogarcia17/HackRice14_MATLAB/tree/master/matlab-mobile-fitness-tracker)
 
 # HackRice14
 Resources for the MATLAB Fitness Tracker Challenge
