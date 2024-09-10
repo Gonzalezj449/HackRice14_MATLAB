@@ -1,3 +1,4 @@
+[![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=armandogarcia17/HackRice14_MATLAB)
 
 # Create Your Own Fitness Tracker with MATLAB&reg; Online&trade; and MATLAB&reg; Mobile&trade;
 This repository contains code and instructions to help you create your own fitness tracker with MATLAB Online and MATLAB Mobile for a Hackathon!
