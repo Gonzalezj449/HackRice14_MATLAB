@@ -1,0 +1,50 @@
+% Define the text for the user to read
+referenceText = 'The quick brown fox jumps over the lazy dog';
+
+% Record the user's spoken audio
+recObj = audiorecorder(44100, 16, 1);  % Create an audio recorder object
+disp('Please read the following text aloud:');
+disp(referenceText);
+disp('Recording starts in 3 seconds...');
+pause(3);
+recordblocking(recObj, 5);  % Record for 5 seconds
+disp('Recording complete.');
+
+% Get audio data
+audioData = getaudiodata(recObj);
+
+% Save the audio to a file (for external speech-to-text services)
+audiowrite('userSpeech.wav', audioData, 44100);
+
+% OPTION 1: Use external speech-to-text services like Google API or Microsoft SDK
+% You can call these services from MATLAB using web requests, send the recorded
+% audio ('userSpeech.wav'), and retrieve the transcribed text.
+
+% For simplicity, let’s assume you get the transcribed text as:
+transcribedText = 'The quick fox jumps over lazy dog';  % Example of potential mistakes
+
+% OPTION 2: Basic speech recognition in MATLAB (less accurate)
+% MATLAB has the "speech2text" function, though it is very basic.
+% Example: transcribedText = speech2text(audioData);
+
+% Split both texts into words
+referenceWords = split(referenceText, ' ');
+transcribedWords = split(transcribedText, ' ');
+
+% Compare the words and identify mismatches
+mismatchIndices = find(~strcmp(referenceWords, transcribedWords));
+
+% Display the results
+disp('Reference Text:');
+disp(referenceText);
+disp('Transcribed Text:');
+disp(transcribedText);
+
+if isempty(mismatchIndices)
+    disp('No mistakes detected!');
+else
+    disp('Mistakes detected in the following words:');
+    for i = mismatchIndices'
+        fprintf('Expected: "%s", but got: "%s"\n', referenceWords{i}, transcribedWords{i});
+    end
+end
